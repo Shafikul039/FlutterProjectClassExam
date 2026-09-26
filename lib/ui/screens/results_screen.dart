@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/quiz_assets.dart';
 import '../../core/quiz_theme.dart';
 import '../../providers/quiz_provider.dart';
 import 'category_selection_screen.dart';
@@ -31,10 +32,13 @@ class ResultsScreen extends StatelessWidget {
             children: [
               const Spacer(flex: 1),
               if (good)
-                Icon(
-                  Icons.celebration,
-                  size: 96,
-                  color: Colors.pink.shade300,
+                SizedBox(
+                  height: 140,
+                  child: Image.asset(
+                    QuizAssets.resultsParty,
+                    fit: BoxFit.contain,
+                    filterQuality: FilterQuality.high,
+                  ),
                 )
               else
                 Icon(
