@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/quiz_assets.dart';
 import '../../core/quiz_constants.dart';
 import '../../core/quiz_theme.dart';
 import 'category_selection_screen.dart';
@@ -77,48 +78,12 @@ class _WelcomeArt extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height.clamp(160.0, 280.0),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Positioned(
-            left: 20,
-            top: 10,
-            child: _blob(Colors.amber.shade300, 56),
-          ),
-          Positioned(
-            right: 30,
-            top: 40,
-            child: _blob(Colors.pink.shade200, 40),
-          ),
-          Positioned(
-            right: 50,
-            bottom: 20,
-            child: Icon(Icons.help_outline, size: 48, color: Colors.green.shade400),
-          ),
-          Positioned(
-            left: 40,
-            bottom: 30,
-            child: Icon(Icons.help, size: 36, color: Colors.pink.shade300),
-          ),
-          CircleAvatar(
-            radius: 64,
-            backgroundColor: const Color(0xFFE8EAF6),
-            child: Icon(Icons.face, size: 72, color: Colors.deepPurple.shade300),
-          ),
-          Positioned(
-            top: 0,
-            child: Icon(Icons.help_rounded, size: 64, color: Colors.amber.shade600),
-          ),
-        ],
+      width: double.infinity,
+      child: Image.asset(
+        QuizAssets.welcomeHero,
+        fit: BoxFit.contain,
+        filterQuality: FilterQuality.high,
       ),
-    );
-  }
-
-  Widget _blob(Color color, double size) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
     );
   }
 }
